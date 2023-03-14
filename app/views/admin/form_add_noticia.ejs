@@ -2,20 +2,25 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Formulario de cadastro de noticia</title>
+			<title>Formulário de cadastro de Notícia</title>
 		</head>
 	<body>
 
-		<h1>Adicionar noticia</h1>
+		<h1>Adicionar notícia</h1>
+		<br />
 
 		<form action="/noticias/salvar" method="post">
-			<label>Titulo</label>
-			<input style="display:block" type="text" id="titulo" name="titulo" placeholder="Titulo da noticia" autocomplete="off">
-
-			<label>Noticia</label>
-			<textarea style="display:block" id="noticia" name="noticia" rows="5" cols="30" placeholder="Corpo da noticia"></textarea>
-
-			<input type="submit" value="Enviar">
+			<label>Título</label>
+			<input style="display:block" type="text" id="titulo" name="titulo" placeholder="Título da Notícia" />
+			<label>Resumo</label>
+			<input style="display:block" type="text" id="resumo" name="resumo" placeholder="Resumo da Notícia" />
+			<label>Nome Autor</label>
+			<input style="display:block" type="text" id="autor" name="autor" placeholder="Autor da Notícia" />
+			<label>Data dos fatos</label>
+			<input style="display:block" type="date" id="data_noticia" name="data_noticia" placeholder="Data da Notícia" />
+			<label>Notícia</label>
+			<textarea style="display:block" id="noticia" name="noticia" rows="5" cols="30"></textarea>
+			<input type="submit" value="Enviar" />
 		</form>
 
 	</body>
