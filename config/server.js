@@ -1,23 +1,20 @@
-const express = require('express')
-const consign = require('consign')
-const bodyParser = require('body-parser')
-//const validator = require('express-validator')
+var express = require('express');
+var consign = require('consign');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
-//var msg = require('./mod_teste')() //sintaxe para execução da cunção importada
-const app = express()//criando a funcao da aplicação
+var app = express();
+app.set('view engine', 'ejs');
+app.set('views', './app/views');
 
-//incluindo middlwares
-//incluindo body-parser (para recuperar as informações do body do formulario via post)
-app.use(bodyParser.urlencoded({extended:true}))//extended: true - permite a inclusão de urls codificadas atraves de json
-//app.use(validator());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressValidator());
 
 consign()
-        .include('app/routes')
-        .then('config/dbConnection.js')
-        .then('app/models')
-        .into(app)//importando todas as rotas da pasta de uma vez
+	.include('app/routes')
+	.then('config/dbConnection.js')
+	.then('app/models')
+	.then('app/controllers')
+	.into(app);
 
-app.set('view engine','ejs')
-app.set('views','./app/views')//destino padrão de busca das views (diretorio relativo a partir do arquivo app)
-
-module.exports = app
+module.exports = app;
