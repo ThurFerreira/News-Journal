@@ -1,7 +1,7 @@
 const express = require('express')
 const consign = require('consign')
 const bodyParser = require('body-parser')
-const validator = require('express-validator')
+//const validator = require('express-validator')
 
 //var msg = require('./mod_teste')() //sintaxe para execução da cunção importada
 const app = express()//criando a funcao da aplicação
